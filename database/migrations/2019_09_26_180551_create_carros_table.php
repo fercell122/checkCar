@@ -14,7 +14,7 @@ class CreateCarrosTable extends Migration
     public function up()
     {
         Schema::create('carro', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->increments('id');
             $table->string('modelo');
             $table->string('tipo');
             $table->string('combustivel');
