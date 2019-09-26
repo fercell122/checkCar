@@ -14,14 +14,14 @@ class CreateCarrosTable extends Migration
     public function up()
     {
         Schema::create('carro', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('id');
             $table->string('modelo');
             $table->string('tipo');
             $table->string('combustivel');
             $table->string('ano_fab');
             $table->string('fabricante');
             $table->string('cor');
-            $table->unsignedInteger('carro_id');
+            
             
             $table->timestamps();
             $table->unsignedInteger('user_id');
