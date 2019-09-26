@@ -23,7 +23,7 @@ class CreateRevisoesTable extends Migration
             $table->string('obsGeral');
             $table->timestamps();
             $table->unsignedInteger('carro_id');
-            $table->foreign('carro_id')->references('id')->on('carros');
+            $table->foreign('carro_id')->references('id')->on('carro');
         });
     }
 
