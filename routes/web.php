@@ -11,6 +11,8 @@
 |
 */
 
+use Symfony\Component\Routing\Annotation\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//rota da tabela carros
+
+Route::get('/carros', 'carroController@index')->name('carros.index');
+

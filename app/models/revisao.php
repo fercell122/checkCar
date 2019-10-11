@@ -3,7 +3,7 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\models\carro;
 class revisao extends Model
 {
     protected $table ='revisao';
