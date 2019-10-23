@@ -18,7 +18,8 @@ class carroController extends Controller
         //exibir relação de registro na tela
 
         $carros = carro::all();
-        return view('carros.index', $carros);
+        return view('carros.index', compact("carros"));
+        
         
 
 

@@ -136,42 +136,25 @@ return [
         [
             'text' => 'carros',
             'url'  => '/carros',
+            'icon' => 'fas fa-fw fa-car',
+
 
         ],
         [
             'text' => 'revisões',
             'url'  => '/revisões',
+            'icon' => 'fas fa-fw fa-check-square',
 
         ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+
+
+        
        
 
 
 
 
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+        
     ],
 
     /*

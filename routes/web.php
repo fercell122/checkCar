@@ -25,3 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/carros', 'carroController@index')->name('carros.index');
 
+//rota da revisao
+
+Route::get('/revisões', 'revisaoController@index')->name('revisoes.index');
+
+

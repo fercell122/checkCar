@@ -14,7 +14,8 @@ class revisaoController extends Controller
      */
     public function index()
     {
-        //
+        $revisao = revisao::all();
+        return view('revisoes.index', $revisao);
     }
 
     /**
