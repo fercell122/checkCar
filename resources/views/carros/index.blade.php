@@ -11,8 +11,8 @@
     <div class="panel-heading clearfix">
         Relaçao dos Carros
         <div class="pull-right">
-            <a href="#" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
-            <a href="#" class="btn btn-success"><i class="fas fa-plus"></i> Inserir um Novo Registro</a>
+            <a href="{{ route('carros.index')}}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
+            <a href="{{ route('carros.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Inserir um Novo Registro</a>
         </div>
     </div>
     <div class="panel-body">
@@ -39,7 +39,28 @@
                     <td>{{  $carro->ano_fab }}</td>
                     <td>{{  $carro->fabricante }}</td>
                     <td>{{  $carro->cor }}</td>
+
+                    <td>
+                            <a href="{{ route('carros.show', $carro) }}" class="btn btn-xs btn-primary">
+                                    <i class="fas fa-fx fa-eye"></i>
+                                </a>
                     
+                                <a href="{{ route('carros.edit', $carro) }}" class="btn btn-xs btn-warning">
+                                        <i class="fas fa-fx fa-pencil-alt"></i>
+                                    </a>
+
+                                    <form action="{{ route('carros.destroy', $carro) }}" method="post" onsubmit="return confirm('Você tem certeza de que quer excluir este registro?');" style="display: inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+
+                                            <button type="submit" class="btn btn-xs btn-danger">
+                                                    <i class="fas fa-fx fa-trash-alt"></i>
+                                                 </button>
+                                             </form>
+                        </td>
+
+
                 </tr>
                 @endforeach
             </tbody>

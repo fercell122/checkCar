@@ -23,7 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //rota da tabela carros
 
-Route::get('/carros', 'carroController@index')->name('carros.index');
+//Route::get('/carros', 'carroController@index')->name('carros.index');
+
+Route::resource('carros', 'carroController');
 
 //rota da revisao
 

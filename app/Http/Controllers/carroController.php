@@ -32,7 +32,8 @@ class carroController extends Controller
      */
     public function create()
     {
-        //
+        return view('carros.create');
+        
     }
 
     /**
