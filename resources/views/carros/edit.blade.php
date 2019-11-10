@@ -21,9 +21,16 @@
       
         <div class="panel-body">
             <div class="row">
-                <div class="form-group col-sm-5">
+                <div class="form-group col-sm-3">
                     <label for="modelo">Modelo do Carro</label>
                     <input type="text" name="modelo" id="modelo" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label for="tipo">Tipo do Carro</label>
+                    <input type="text" name="tipo" id="tipo" class="form-control" required>
                 </div>
             </div>
 
@@ -57,17 +64,7 @@
              </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 

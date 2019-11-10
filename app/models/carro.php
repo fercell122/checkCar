@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class carro extends Model
 {
     protected $table ='carro';
-    protected $fillable = ['modelo', 'tipo', 'combustivel', 'ano_fab', 'fabricante', 'cor'];
+    protected $fillable = ['modelo', 'tipo', 'combustivel', 'ano_fab', 'fabricante', 'cor', 'user_id'];
     
 
     public function revisoes()

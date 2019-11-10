@@ -165,7 +165,7 @@ return [
                 [
                     'text' => 'Listar revisões',
                     'icon' => 'fas fa-fw fa-bars',
-                    'route' => '',
+                    
 
                 ],
         ],
