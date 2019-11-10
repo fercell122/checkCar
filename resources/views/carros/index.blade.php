@@ -44,10 +44,14 @@
                             <a href="{{ route('carros.show', $carro) }}" class="btn btn-xs btn-primary">
                                     <i class="fas fa-fx fa-eye"></i>
                                 </a>
-                    
-                                <a href="{{ route('carros.edit', $carro) }}" class="btn btn-xs btn-warning">
+
+                                
+                                    <a href="{{ route('carros.edit', $carro->id) }}" class="btn btn-warning btn-xs">
                                         <i class="fas fa-fx fa-pencil-alt"></i>
                                     </a>
+
+                    
+                               
 
                                     <form action="{{ route('carros.destroy', $carro) }}" method="post" onsubmit="return confirm('Você tem certeza de que quer excluir este registro?');" style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">

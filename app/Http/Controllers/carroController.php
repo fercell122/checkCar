@@ -66,7 +66,9 @@ class carroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $carro = Carro::find($id);
+        return view('carros.edit', compact('carro'));
+
     }
 
     /**
@@ -76,9 +78,11 @@ class carroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Carro $carro)
     {
-        //
+        Carro::update($request->all());
+        return redirect()->route('carros.index');
+
     }
 
     /**

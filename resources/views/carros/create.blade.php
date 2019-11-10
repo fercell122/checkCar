@@ -4,47 +4,69 @@
 @section('title', 'ChecK')
 
 @section('content_header')
-    <h1><i class="fas fa-fx fa-user"></i> Inclusao de Carros</h1>
+    <h1><i class="fas fa-fx fa-user"></i> Inclusão de Carros</h1>
 @stop
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <i class="fas fa-fx fa-user"></i> Tela de cadastramento de carro
-        </div>
 
-       <div class="panel-body">
-          <form method="post" action="" enctype="multipart/form-data">
 
-          <div class="form-group">
-               <label for="modelo">Nome do Modelo <span class="text-red">*</span></label>
-               <input type="text" name="modelo" id="modelo" class="form-control">
+<form action="{{ route('carros.store') }}" method="post" enctype="multipart/form-data">
+     {{ csrf_field() }}
+
+     <div class="panel panel-default">
+          <div class="panel-heading">
+              Informe os dados do carro a ser cadastrado
           </div>
 
-          <div class="form-group">
-               <label for="tipo">Tipo <span class="text-red">*</span></label>
-               <input type="text" name="tipo" id="tipo" class="form-control">
-          </div>
 
-          <div class="form-group">
-               <label for="combustivel">Tipo do combustível</label>
-               <input type="text" name="combustivel" id="combustivel" class="form-control">
-          </div>
+          <div class="panel-body">
+               <div class="row">
+                   <div class="form-group col-sm-5">
+                       <label for="modelo">Modelo do Carro</label>
+                       <input type="text" name="modelo" id="modelo" class="form-control" required>
+                   </div>
+               </div>
 
-          <div class="form-group">
-               <label for="ano_fab">Ano de Fabricação <span class="text-red">*</span></label>
-               <input type="text" name="ano_fab" id="ano_fab" class="form-control">
-          </div>
+               <div class="row">
+                    <div class="form-group col-sm-2">
+                        <label for="combustivel"> Tipo de Combustível</label>
+                        <input type="text" name="combustivel" id="combustivel" class="form-control">
+                    </div>
+                </div>
 
-          <div class="form-group">
-                <label for="fabricante">Fabricante <span class="text-red">*</span></label>
-                <input type="text" name="fabricante" id="fabricante" class="form-control">
-           </div>
+          
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="ano_fab">Ano  de Fabricação </label>
+                        <input type="date" name="ano_fab" id="ano_fab" class="form-control" required>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="fabricante">Nome do Fabricante</label>
+                        <input type="text" name="fabricante" id="fabricante" class="form-control">
+                    </div>
+                </div>
 
-           <div class="form-group">
-                <label for="cor">Cor <span class="text-red">*</span></label>
-                <input type="text" name="cor" id="cor" class="form-control">
-           </div>
+                <div class="row">
+                    <div class="form-group col-sm-2">
+                        <label for="cor">Cor do carro </label>
+                        <input type="text" name="cor" id="cor" class="form-control">
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <a href="{{ route('carros.index') }}" class="btn btn-default">Voltar</a>
+                    <button type="submit" class="btn btn-success">Gravar</button>
+                </div>
+
+
+
+
+
+
+          
 
          <!-- falta colocar os botoes -->
 
