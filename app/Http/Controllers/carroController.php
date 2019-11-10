@@ -44,7 +44,9 @@ class carroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Carro::create($request->all());
+        return redirect()->route('carros.index');
+
     }
 
     /**
@@ -53,7 +55,7 @@ class carroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Carro $carro)
     {
         //
     }

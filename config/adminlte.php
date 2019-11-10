@@ -132,23 +132,56 @@ return [
             'text' => 'search',
             'search' => true,
         ],
+
+
+
         ['header' => 'main_navigation'],
         [
             'text' => 'carros',
             'url'  => '/carros',
             'icon' => 'fas fa-fw fa-car',
+            'submenu' =>[
+                [
+                    'text' => 'Listar Carros',
+                    'icon' => 'fas fa-fw fa-bars',
+                    'route' => 'carros.index',
 
+                ],
+
+                [
+                    'text' => 'incluir Carro',
+                    'icon' => 'fas fa-fw fa-car-plus',
+                ],
+            ],
 
         ],
+
         [
             'text' => 'revisões',
             'url'  => '/revisões',
             'icon' => 'fas fa-fw fa-check-square',
 
+            'submenu' =>[
+                [
+                    'text' => 'Listar revisões',
+                    'icon' => 'fas fa-fw fa-bars',
+                    'route' => '',
+
+                ],
         ],
+    ],
 
-
-        
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'change_password',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
 
 
