@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\carro;
+use Illuminate\Support\Facades\DB;
+
 
 
 class carroController extends Controller
@@ -55,9 +57,12 @@ class carroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Carro $carro)
+    public function show($id)
     {
-        //
+        
+        $carro = Carro::find($id);
+        return view('carros.show', compact('carro'));
+        
     }
 
     /**
@@ -80,9 +85,22 @@ class carroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Carro $carro)
+    public function update(Request $request, $id)
     {
-        Carro::update($request->all());
+        
+
+        DB::table('carro')
+        ->where('id', $id)
+        ->update(
+            [
+            'modelo' => $request->modelo,
+            'tipo' => $request->tipo,
+            'combustivel' => $request->combustivel,
+            'ano_fab' => $request->ano_fab,
+            'fabricante' => $request->fabricante,
+            'cor' => $request->cor
+        ]);
+        
         return redirect()->route('carros.index');
 
     }
@@ -95,6 +113,11 @@ class carroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+
+        Carro::destroy($id);
+        return redirect()->route('carros.index');
+
+
     }
 }

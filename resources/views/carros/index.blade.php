@@ -41,19 +41,20 @@
                     <td>{{  $carro->cor }}</td>
 
                     <td>
-                            <a href="{{ route('carros.show', $carro) }}" class="btn btn-xs btn-primary">
+                            <!-- botão visualização -->
+                            <a href="{{ route('carros.show', $carro->id) }}" class="btn  btn-primary btn-xs">
                                     <i class="fas fa-fx fa-eye"></i>
                                 </a>
 
-                                
+                                <!-- botão alteração -->
                                     <a href="{{ route('carros.edit', $carro->id) }}" class="btn btn-warning btn-xs">
                                         <i class="fas fa-fx fa-pencil-alt"></i>
                                     </a>
 
                     
                                
-
-                                    <form action="{{ route('carros.destroy', $carro) }}" method="post" onsubmit="return confirm('Você tem certeza de que quer excluir este registro?');" style="display: inline-block;">
+                                        <!-- botão exclusão -->
+                                    <form action="{{ route('carros.destroy', $carro->id) }}" method="post" onsubmit="return confirm('Você tem certeza de que quer excluir este registro?');" style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
