@@ -150,7 +150,7 @@ return [
 
                 [
                     'text' => 'incluir Carro',
-                    'icon' => 'fas fa-fw fa-car-plus',
+                    'icon' => 'fas fa-fw fa-plus',
                     'route' => 'carros.create'
                 ],
             ],
@@ -159,18 +159,25 @@ return [
 
         [
             'text' => 'revisões',
-            'url'  => '/revisões',
+            'url'  => '/revisoes',
             'icon' => 'fas fa-fw fa-check-square',
 
             'submenu' =>[
                 [
                     'text' => 'Listar revisões',
                     'icon' => 'fas fa-fw fa-bars',
-                    'route'=> 'revisoes.create'
+                    'route'=> 'revisoes.index'
 
                 ],
+
+                [
+                    'text' => 'Incluir Revisão',
+                    'icon' => 'fas fa-fw fa-plus',
+                    'route'=> 'revisoes.create'
+                ],
+            ],
         ],
-    ],
+    
 
         ['header' => 'account_settings'],
         [

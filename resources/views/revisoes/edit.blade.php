@@ -1,7 +1,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'ChecK')
+@section('title', 'CheckCar')
 
 @section('content_header')
     <h1><i class="fas fa-fx fa-user"></i> Alteração de Revisão</h1>

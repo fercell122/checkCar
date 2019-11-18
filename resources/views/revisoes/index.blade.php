@@ -9,7 +9,7 @@
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading clearfix">
-        Relaçao das Revisões
+        Relação das Revisões
         <div class="pull-right">
             <a href="{{ route('revisoes.index')}}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
             <a href="{{ route('revisoes.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Inserir um Novo Registro</a>
@@ -53,7 +53,7 @@
 
                     
                                
-                                        <!-- botão exclusão -->
+                                     <!-- botão exclusão -->
                                     <form action="{{ route('revisoes.destroy', $revisao->id) }}" method="post" onsubmit="return confirm('Você tem certeza de que quer excluir este registro?');" style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\revisao;
+use App\models\carro;
 use Illuminate\Support\Facades\DB;
 
 
@@ -16,7 +17,7 @@ class revisaoController extends Controller
      */
     public function index()
     {
-        $revisao = revisao::all();
+        $revisoes = revisao::all();
         return view('revisoes.index', compact("revisoes"));
 
     }
@@ -54,7 +55,14 @@ class revisaoController extends Controller
     public function show($id)
     {
         $revisao = Revisao::find($id);
-        return view('revisoes.show', compact('revisao'));
+       // $carro = Carro::find($id);
+        return view('revisoes.show ', compact('revisao'));
+
+         
+
+        
+        
+
         
     }
 

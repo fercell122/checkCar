@@ -1,7 +1,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'ChecK')
+@section('title', 'CheckCar')
 
 @section('content_header')
     <h1><i class="fas fa-fx fa-user"></i> Inclusão de Revisão</h1>
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="form-group col-sm-3">
                         <label for="funcMecanica">Funcionamento Mecânico </label>
-                        <input type="boolean" name="funcMecanica" id="funcMecanica" class="form-control" required>
+                        <input type="text" name="funcMecanica" id="funcMecanica" class="form-control" required>
                     </div>
                 </div>
     
