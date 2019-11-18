@@ -57,10 +57,10 @@
                 {{$carro->fabricante}}
             </div>
         </div>
-    </div>
+    
 
 
-    <div class="row">
+        <div class="row">
             <div class="col-sm-2">
                 Cor
             </div>

@@ -151,6 +151,7 @@ return [
                 [
                     'text' => 'incluir Carro',
                     'icon' => 'fas fa-fw fa-car-plus',
+                    'route' => 'carros.create'
                 ],
             ],
 
@@ -165,7 +166,7 @@ return [
                 [
                     'text' => 'Listar revisões',
                     'icon' => 'fas fa-fw fa-bars',
-                    
+                    'route'=> 'revisoes.create'
 
                 ],
         ],

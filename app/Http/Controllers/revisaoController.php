@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\revisao;
+use Illuminate\Support\Facades\DB;
+
 
 class revisaoController extends Controller
 {
@@ -15,7 +17,8 @@ class revisaoController extends Controller
     public function index()
     {
         $revisao = revisao::all();
-        return view('revisoes.index', $revisao);
+        return view('revisoes.index', compact("revisoes"));
+
     }
 
     /**
@@ -25,7 +28,8 @@ class revisaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('revisoes.create');
+
     }
 
     /**
@@ -36,7 +40,9 @@ class revisaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Revisao::create($request->all());
+        return redirect()->route('revisoes.index');
+
     }
 
     /**
@@ -47,7 +53,9 @@ class revisaoController extends Controller
      */
     public function show($id)
     {
-        //
+        $revisao = Revisao::find($id);
+        return view('revisoes.show', compact('revisao'));
+        
     }
 
     /**
@@ -58,7 +66,9 @@ class revisaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $revisao = Revisao::find($id);
+        return view('revisoes.edit', compact('revisao'));
+
     }
 
     /**
@@ -70,7 +80,23 @@ class revisaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('revisao')
+        ->where('id, $id')
+        ->update(
+            [
+                'km' => $request->km,
+                'funcEletrica' => $request->funcEletrica,
+                'funcMecanica' =>$request->funcMecanica,
+                'condFuncionamento' =>$request->condFuncionamento,
+                'condPneu' =>$request->condPneu,
+                'obsGeral' =>$request->obsGeral,
+                'carro_id' =>$request->carro_id 
+
+
+            ]
+            );
+            return redirect()->route('revisoes.index');
+
     }
 
     /**
@@ -81,6 +107,9 @@ class revisaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        Revisao::destroy($id);
+        return redirect()->route('revisoes.index');
+        
     }
 }

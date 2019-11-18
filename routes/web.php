@@ -29,6 +29,6 @@ Route::resource('carros', 'carroController');
 
 //rota da revisao
 
-Route::get('/revisões', 'revisaoController@index')->name('revisoes.index');
+Route::resource('revisoes', 'revisaoController');
 
 
